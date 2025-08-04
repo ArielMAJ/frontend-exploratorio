@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfólio</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background: #222;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      h2 {
+        color: #222;
+        margin-top: 2rem;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .project {
+        background: #f9f9f9;
+        border-radius: 6px;
+        padding: 1rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s;
+      }
+      .project:hover {
+        transform: translateY(-5px) scale(1.03);
+      }
+      .project-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .project-desc {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+      .project-link {
+        color: #0078d4;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      footer {
+        text-align: center;
+        padding: 1.5rem 0;
+        background: #222;
+        color: #fff;
+        margin-top: 2rem;
+      }
+      @media (max-width: 600px) {
+        .container {
+          padding: 1rem;
+        }
+        .projects {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Seu Nome</h1>
+      <p>Desenvolvedor Web | Frontend & Backend</p>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+    <div class="container">
+      <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>
+          Olá! Sou um desenvolvedor apaixonado por tecnologia e criação de
+          soluções web. Tenho experiência em HTML, CSS, JavaScript e frameworks
+          modernos. Adoro aprender e enfrentar novos desafios!
+        </p>
+      </section>
+      <section id="projetos">
+        <h2>Projetos</h2>
+        <div class="projects" id="projects-list">
+          <!-- Projetos serão inseridos via JavaScript -->
+        </div>
+      </section>
+      <section id="contato">
+        <h2>Contato</h2>
+        <p>
+          Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
+        </p>
+        <p>
+          LinkedIn:
+          <a href="https://linkedin.com/in/seuusuario" target="_blank"
+            >linkedin.com/in/seuusuario</a
+          >
+        </p>
+      </section>
+    </div>
+    <footer>&copy; 2024 Seu Nome. Todos os direitos reservados.</footer>
+    <script>
+      // Exemplo de projetos
+      const projetos = [
+        {
+          titulo: "Site de Blog",
+          descricao:
+            "Um site de blog responsivo feito com HTML, CSS e JavaScript.",
+          link: "#",
+        },
+        {
+          titulo: "Aplicativo de Tarefas",
+          descricao:
+            "App para gerenciar tarefas diárias, com armazenamento local.",
+          link: "#",
+        },
+        {
+          titulo: "Portfólio Interativo",
+          descricao: "Meu portfólio pessoal com animações e navegação suave.",
+          link: "#",
+        },
+      ];
+
+      const projectsList = document.getElementById("projects-list");
+      projetos.forEach((proj) => {
+        const div = document.createElement("div");
+        div.className = "project";
+        div.innerHTML = `
+                <div class="project-title">${proj.titulo}</div>
+                <div class="project-desc">${proj.descricao}</div>
+                <a class="project-link" href="${proj.link}" target="_blank">Ver Projeto</a>
+            `;
+        projectsList.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
